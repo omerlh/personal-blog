@@ -13,10 +13,10 @@
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sharp": "^1.6.42",
+    "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-remark-copy-linked-files": "^1.5.31",
-    "gatsby-remark-images": "^1.5.61",
+    "gatsby-remark-images": "^2.0.1",
     "gatsby-remark-prismjs": "^1.2.24",
     "gatsby-remark-responsive-iframe": "^1.4.18",
     "gatsby-remark-smartypants": "^1.4.12",
@@ -26,7 +26,8 @@
     "lodash": "^4.17.5",
     "typeface-merriweather": "0.0.43",
     "typeface-montserrat": "0.0.43",
-    "typography-theme-wordpress-2016": "^0.15.10"
+    "typography-theme-wordpress-2016": "^0.15.10",
+    "snyk": "^1.104.2"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -52,6 +53,9 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
-  }
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
